@@ -2,7 +2,7 @@
 
 [![Deploy to GitHub Pages](https://github.com/mdkaif01/cpu-simulator/actions/workflows/deploy.yml/badge.svg)](https://github.com/mdkaif01/cpu-simulator/actions/workflows/deploy.yml)
 [![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue.svg)](https://www.typescriptlang.org/)
+[![JavaScript](https://img.shields.io/badge/JavaScript-ES2022-yellow.svg)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![Vite](https://img.shields.io/badge/Vite-5-purple.svg)](https://vitejs.dev/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.4-38bdf8.svg)](https://tailwindcss.com/)
 

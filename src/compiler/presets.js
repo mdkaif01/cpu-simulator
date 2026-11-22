@@ -1,19 +1,9 @@
-// Preset Programs for the Computer Simulator (Standard C & High-Level Syntax)
-
-export interface CodePreset {
-  id: string;
-  name: string;
-  category: 'C Basics' | 'Control Flow' | 'Algorithms' | 'Hardware/ALU';
-  description: string;
-  code: string;
-}
-
-export const PRESETS: CodePreset[] = [
+export const PRESETS = [
   {
-    id: 'variables-math',
-    name: '1. C Math & Variables (Basics)',
-    category: 'C Basics',
-    description: 'Learn how C variables are mapped to RAM addresses and how the ALU computes arithmetic.',
+    id: "variables-math",
+    name: "1. C Math & Variables (Basics)",
+    category: "C Basics",
+    description: "Learn how C variables are mapped to RAM addresses and how the ALU computes arithmetic.",
     code: `// --- 1. C Variables & Arithmetic ---
 // Watch data transfer between RAM, Registers, and ALU
 #include <stdio.h>
@@ -35,10 +25,10 @@ int main() {
 `
   },
   {
-    id: 'if-else-max',
-    name: '2. C Conditionals (If / Else)',
-    category: 'Control Flow',
-    description: 'See how the ALU compares two numbers and how the FLAGS register (Zero/Negative) directs CPU branching.',
+    id: "if-else-max",
+    name: "2. C Conditionals (If / Else)",
+    category: "Control Flow",
+    description: "See how the ALU compares two numbers and how the FLAGS register (Zero/Negative) directs CPU branching.",
     code: `// --- 2. C Conditionals & Branching ---
 // Compares two numbers and uses condition flags (Z, N) to branch
 #include <stdio.h>
@@ -60,10 +50,10 @@ int main() {
 `
   },
   {
-    id: 'loop-sum',
-    name: '3. C For Loop (Sum 1 to 5)',
-    category: 'Control Flow',
-    description: 'Watch the Program Counter (PC) loop backward and watch registers accumulate values on each cycle.',
+    id: "loop-sum",
+    name: "3. C For Loop (Sum 1 to 5)",
+    category: "Control Flow",
+    description: "Watch the Program Counter (PC) loop backward and watch registers accumulate values on each cycle.",
     code: `// --- 3. C For Loop Accumulator ---
 // Computes 1 + 2 + 3 + 4 + 5 = 15
 #include <stdio.h>
@@ -81,10 +71,10 @@ int main() {
 `
   },
   {
-    id: 'fibonacci',
-    name: '4. C Fibonacci Sequence',
-    category: 'Algorithms',
-    description: 'Computes Fibonacci numbers step by step, swapping variables through temporary storage in RAM.',
+    id: "fibonacci",
+    name: "4. C Fibonacci Sequence",
+    category: "Algorithms",
+    description: "Computes Fibonacci numbers step by step, swapping variables through temporary storage in RAM.",
     code: `// --- 4. C Fibonacci Sequence ---
 // Generates first 7 numbers: 0, 1, 1, 2, 3, 5, 8
 #include <stdio.h>
@@ -106,10 +96,10 @@ int main() {
 `
   },
   {
-    id: 'function-call',
-    name: '5. C Functions & Stack Frame',
-    category: 'Algorithms',
-    description: 'Inspect the Call Stack and Stack Pointer (SP) as a function is invoked, executes, and returns.',
+    id: "function-call",
+    name: "5. C Functions & Stack Frame",
+    category: "Algorithms",
+    description: "Inspect the Call Stack and Stack Pointer (SP) as a function is invoked, executes, and returns.",
     code: `// --- 5. C Functions & Call Stack ---
 // Demonstrates stack frames, parameter passing, and return
 #include <stdio.h>
@@ -128,10 +118,10 @@ int main() {
 `
   },
   {
-    id: 'array-sum',
-    name: '6. C Array Memory Traversal',
-    category: 'Algorithms',
-    description: 'Observe contiguous memory allocation in the Data segment and indexed pointer dereferencing.',
+    id: "array-sum",
+    name: "6. C Array Memory Traversal",
+    category: "Algorithms",
+    description: "Observe contiguous memory allocation in the Data segment and indexed pointer dereferencing.",
     code: `// --- 6. C Memory Array Traversal ---
 // Allocates contiguous array in RAM and sums its elements
 #include <stdio.h>
@@ -150,10 +140,10 @@ int main() {
 `
   },
   {
-    id: 'bitwise-logic',
-    name: '7. C Bitwise Logic & Shifts',
-    category: 'Hardware/ALU',
-    description: 'Directly exercises ALU logic gates: AND, OR, XOR, and bitwise Left/Right shifts.',
+    id: "bitwise-logic",
+    name: "7. C Bitwise Logic & Shifts",
+    category: "Hardware/ALU",
+    description: "Directly exercises ALU logic gates: AND, OR, XOR, and bitwise Left/Right shifts.",
     code: `// --- 7. C Bitwise Operations ---
 // Tests internal logic gates inside the ALU
 #include <stdio.h>

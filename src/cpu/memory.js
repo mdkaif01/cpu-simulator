@@ -1,25 +1,18 @@
-// Memory Unit Implementation
-
-import { MemoryCell } from '../types/cpu';
-
 export class MemoryUnit {
-  private cells: MemoryCell[] = [];
-
-  constructor(initialCells?: MemoryCell[]) {
+  cells = [];
+  constructor(initialCells) {
     if (initialCells && initialCells.length === 256) {
       this.cells = initialCells.map((c) => ({ ...c }));
     } else {
       this.initDefault();
     }
   }
-
-  private initDefault(): void {
+  initDefault() {
     this.cells = [];
     for (let i = 0; i < 256; i++) {
-      let segment: 'code' | 'data' | 'stack' = 'data';
-      if (i < 0x80) segment = 'code';
-      else if (i >= 0xD0) segment = 'stack';
-
+      let segment = "data";
+      if (i < 128) segment = "code";
+      else if (i >= 208) segment = "stack";
       this.cells.push({
         address: i,
         value: 0,
@@ -28,34 +21,28 @@ export class MemoryUnit {
       });
     }
   }
-
-  public read(address: number): number {
+  read(address) {
     const clamped = Math.max(0, Math.min(255, address));
-    this.cells[clamped].lastAccessed = 'read';
+    this.cells[clamped].lastAccessed = "read";
     return this.cells[clamped].value;
   }
-
-  public write(address: number, value: number): void {
+  write(address, value) {
     const clamped = Math.max(0, Math.min(255, address));
     this.cells[clamped].value = value;
-    this.cells[clamped].lastAccessed = 'write';
+    this.cells[clamped].lastAccessed = "write";
   }
-
-  public getCell(address: number): MemoryCell | undefined {
+  getCell(address) {
     return this.cells[address];
   }
-
-  public getCells(): MemoryCell[] {
+  getCells() {
     return this.cells.map((c) => ({ ...c }));
   }
-
-  public clearAccessFlags(): void {
+  clearAccessFlags() {
     for (let i = 0; i < this.cells.length; i++) {
       this.cells[i].lastAccessed = null;
     }
   }
-
-  public clone(): MemoryUnit {
+  clone() {
     const copy = new MemoryUnit();
     copy.cells = this.cells.map((c) => ({ ...c }));
     return copy;
