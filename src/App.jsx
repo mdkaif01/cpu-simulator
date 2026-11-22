@@ -184,11 +184,11 @@ export const App = () => {
     isHalted={vmState.isHalted}
   />{
     /* Main Simulator Workspace */
-  }<main className="flex-1 p-3 max-w-[1750px] w-full mx-auto grid grid-cols-1 xl:grid-cols-12 gap-3 items-start">{
-    /* LEFT COLUMN: Code & Assembly (5 cols on xl) */
-  }<section className="xl:col-span-5 flex flex-col gap-3 h-[850px]">{
+  }<main className="flex-1 p-3 max-w-[1750px] w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-3 items-stretch">{
+    /* LEFT COLUMN: Code & Assembly (4 cols on lg/xl) */
+  }<section className="lg:col-span-4 flex flex-col gap-3 h-full">{
     /* Code Tab Switcher */
-  }<div className="flex bg-slate-900 p-1 rounded-xl border border-slate-800"><button
+  }<div className="flex bg-slate-900 p-1 rounded-xl border border-slate-800 shrink-0"><button
     onClick={() => setCodeTab("highlevel")}
     className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 text-xs font-semibold rounded-lg transition-all ${codeTab === "highlevel" ? "bg-slate-800 text-cyan-300 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}
   ><Code2 className="w-3.5 h-3.5" /><span>High-Level Code</span></button><button
@@ -196,7 +196,7 @@ export const App = () => {
     className={`flex-1 flex items-center justify-center gap-1.5 py-1.5 text-xs font-semibold rounded-lg transition-all ${codeTab === "assembly" ? "bg-slate-800 text-amber-300 shadow-sm" : "text-slate-400 hover:text-slate-200"}`}
   ><FileCode2 className="w-3.5 h-3.5" /><span>Assembly</span>{compilation && <span className="text-[10px] bg-slate-950 px-1.5 py-0.2 rounded font-mono text-slate-400">{compilation.instructions.length}</span>}</button></div>{
     /* Active Code Panel */
-  }<div className="flex-1 overflow-hidden">{codeTab === "highlevel" ? <CodeEditor
+  }<div className="h-[520px] lg:h-[540px] shrink-0 overflow-hidden">{codeTab === "highlevel" ? <CodeEditor
     code={sourceCode}
     onChange={handleCodeChange}
     onCompile={() => compileAndLoad(sourceCode)}
@@ -212,16 +212,16 @@ export const App = () => {
     currentPc={vmState.registers.PC}
     highlightedLine={activeLine}
   />}</div>{
-    /* Bottom Left: Terminal Console */
-  }<div className="h-[240px]"><ConsoleView
+    /* Bottom Left: Terminal Console (Stretches to fill vertical height, eliminating bottom gap) */
+  }<div className="flex-1 min-h-[260px] overflow-hidden"><ConsoleView
     output={vmState.outputConsole}
     onClear={() => {
       vmRef.current.clearConsole();
       setVmState(vmRef.current.getState());
     }}
   /></div></section>{
-    /* RIGHT COLUMN: Hardware Datapath, Control Unit, Registers & ALU (7 cols on xl) */
-  }<section className="xl:col-span-7 flex flex-col gap-3">{
+    /* RIGHT COLUMN: Hardware Datapath, Control Unit, Registers & ALU (8 cols on lg/xl) */
+  }<section className="lg:col-span-8 flex flex-col gap-3">{
     /* Main SVG Animated Datapath */
   }<HardwareVisualizer
     registers={vmState.registers}

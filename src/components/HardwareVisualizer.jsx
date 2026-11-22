@@ -25,9 +25,9 @@ export const HardwareVisualizer = ({
     /* Micro-step indicator badge */
   }<div className="flex items-center gap-1.5 text-xs font-mono bg-slate-950 px-2.5 py-1 rounded-full border border-slate-800"><span className="text-slate-500">Micro-Cycle:</span><span className={`font-bold uppercase ${stage === "FETCH" ? "text-blue-400" : stage === "DECODE" ? "text-indigo-400" : stage === "EXECUTE" ? "text-amber-400" : "text-emerald-400"}`}>{stage}</span></div></div></div>{
     /* SVG Datapath & Bus Wiring Diagram */
-  }<div className="relative w-full h-[400px] flex items-center justify-center select-none"><svg
+  }<div className="relative w-full h-[420px] xl:h-[440px] flex items-center justify-center select-none"><svg
     viewBox="0 0 900 400"
-    className="w-full h-full max-h-[400px]"
+    className="w-full h-full max-h-[440px]"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >{
