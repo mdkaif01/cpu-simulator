@@ -1,4 +1,4 @@
-# SiliconSim — Interactive Computer Architecture & CPU Simulator
+# CPUVerse — Interactive Computer Architecture & CPU Simulator
 
 [![Deploy to GitHub Pages](https://github.com/mdkaif01/cpu-simulator/actions/workflows/deploy.yml/badge.svg)](https://github.com/mdkaif01/cpu-simulator/actions/workflows/deploy.yml)
 [![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev/)
@@ -11,13 +11,15 @@ A web-based computer architecture simulator that visually illustrates how a Von 
 ---
 
 ### 🌐 Live Demo
-👉 **[Launch SiliconSim](https://mdkaif01.github.io/cpu-simulator/)**
+
+👉 **[Launch CPUVerse](https://mdkaif01.github.io/cpu-simulator/)**
 
 ---
 
-## 🌟 Key Features
+## Key Features
 
 ### 1. High-Level Language & Compiler
+
 - **Standard C & High-Level Syntax**:
   - Variable declarations & assignments: `int a = 15; int b = 7;`
   - Arithmetic & Expressions: `+`, `-`, `*`, `/`, `%`
@@ -33,6 +35,7 @@ A web-based computer architecture simulator that visually illustrates how a Von 
   - Click on any line number in the code editor gutter to set or clear execution breakpoints.
 
 ### 2. Micro-Architecture & CPU Datapath
+
 - **Central Processing Unit (CPU)**:
   - **Register File**:
     - General Purpose: `R0`, `R1`, `R2`, `R3`, `R4`, `R5` with live values in Decimal, Hex, and Binary.
@@ -61,11 +64,13 @@ A web-based computer architecture simulator that visually illustrates how a Von 
     - Plain-English card updating every clock cycle to explain exactly what hardware transfers just occurred.
 
 ### 3. Animated System Buses
+
 - **Address Bus** (Golden/Amber): Transmits memory addresses from MAR/PC across the architecture.
 - **Data Bus** (Cyan/Blue): Bidirectional transmission between RAM, MBR, Registers, and ALU with flowing packet animations.
 - **Control Bus** (Purple): Carries read/write and synchronization pulses.
 
 ### 4. Execution Controls & Time Travel Debugging
+
 - **Play / Pause**: Automated clock execution with speed slider from 0.5 Hz to 20 Hz.
 - **Micro-Step (F11)**: Advance one micro-cycle at a time (Fetch $\rightarrow$ Decode $\rightarrow$ Execute $\rightarrow$ Writeback).
 - **Instruction Step (F10)**: Advance one full machine instruction.
@@ -74,6 +79,7 @@ A web-based computer architecture simulator that visually illustrates how a Von 
 - **Reset (F8)**: Re-initialize CPU, registers, and memory back to cycle 0.
 
 ### 5. Built-in Preset Programs
+
 1. **C Math & Variables (Basics)**: Data transfer between RAM, Registers, and arithmetic calculations.
 2. **C Conditionals (If / Else)**: ALU comparison and branching using Condition Flags (`Z`, `N`).
 3. **C For Loop (Sum 1 to 5)**: PC loop jumps and register accumulation.
@@ -84,39 +90,43 @@ A web-based computer architecture simulator that visually illustrates how a Von 
 
 ---
 
-## ⌨️ Keyboard Shortcuts
+## Keyboard Shortcuts
 
-| Shortcut | Action |
-| :--- | :--- |
-| `Space` | Toggle Run / Pause |
-| `F11` | Micro-Cycle Step (Fetch $\rightarrow$ Decode $\rightarrow$ Execute $\rightarrow$ Writeback) |
-| `F10` | Full Instruction Step |
-| `Line Step` | Step to Next Source Code Line |
-| `Ctrl + Z` | Step Back (Undo / Time Travel) |
-| `F8` | Reset CPU to Cycle 0 |
+| Shortcut    | Action                                                                                      |
+| :---------- | :------------------------------------------------------------------------------------------ |
+| `Space`     | Toggle Run / Pause                                                                          |
+| `F11`       | Micro-Cycle Step (Fetch $\rightarrow$ Decode $\rightarrow$ Execute $\rightarrow$ Writeback) |
+| `F10`       | Full Instruction Step                                                                       |
+| `Line Step` | Step to Next Source Code Line                                                               |
+| `Ctrl + Z`  | Step Back (Undo / Time Travel)                                                              |
+| `F8`        | Reset CPU to Cycle 0                                                                        |
 
 ---
 
-## 🛠️ Local Development
+## Local Development
 
 ### Prerequisites
+
 - [Node.js](https://nodejs.org/) (v20 or higher recommended)
 - `npm`
 
 ### Installation & Running Locally
 
 1. Clone the repository:
+
    ```bash
    git clone https://github.com/mdkaif01/cpu-simulator.git
    cd cpu-simulator
    ```
 
 2. Install dependencies:
+
    ```bash
    npm install
    ```
 
 3. Start the local development server:
+
    ```bash
    npm run dev
    ```
@@ -132,6 +142,6 @@ npm run preview
 
 ---
 
-## 🚀 Deployment
+## Deployment
 
 The project is configured for automated deployment to **GitHub Pages** using GitHub Actions ([`.github/workflows/deploy.yml`](.github/workflows/deploy.yml)). Every push to the `main` branch automatically builds and publishes the latest version.
